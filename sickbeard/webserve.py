@@ -694,6 +694,7 @@ class ConfigSearch:
     @cherrypy.expose
     def saveSearch(self, use_nzbs=None, use_torrents=None, nzb_dir=None, sab_username=None, sab_password=None,
                        sab_apikey=None, sab_category=None, sab_host=None, nzbget_password=None, nzbget_category=None, nzbget_host=None,
+                       hellanzb_password=None, hellanzb_category=None, hellanzb_host=None,
                        torrent_dir=None, nzb_method=None, usenet_retention=None, search_frequency=None, download_propers=None):
 
         results = []
@@ -748,6 +749,10 @@ class ConfigSearch:
         sickbeard.NZBGET_PASSWORD = nzbget_password
         sickbeard.NZBGET_CATEGORY = nzbget_category
         sickbeard.NZBGET_HOST = nzbget_host
+        
+        sickbeard.HELLANZB_PASSWORD = hellanzb_password
+        sickbeard.HELLANZB_CATEGORY = hellanzb_category
+        sickbeard.HELLANZB_HOST = hellanzb_host
 
 
         sickbeard.save_config()
